@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarificantes | Poolcenter</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="nav-fijo">
+        <a href="index.html" class="btn-volver">← Menú Principal</a>
+        <h2 id="titulo-pagina">Clarificantes y Limpieza</h2>
+    </nav>
+
+    <main class="contenedor">
+        <div class="grid-productos" id="grid-marcas"></div>
+    </main>
+
+    <div id="modal-variantes" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <div class="grid-variantes" id="grid-variantes-body"></div>
+        </div>
+    </div>
+
+    <script src="productos.js"></script>
+    <script>
+        const gridMarcas = document.getElementById('grid-marcas');
+        const modal = document.getElementById('modal-variantes');
+
+        function mostrarMarcas() {
+            // FILTRO POR CATEGORÍA CLARIFICANTES
+            const lista = catalogo.clarificantes; 
+            gridMarcas.innerHTML = "";
+
+            lista.forEach((item, index) => {
+                gridMarcas.innerHTML += `
+                    <div class="card-marca" onclick="abrirVariantes(${index})">
+                        <img src="img/${item.imagenPrincipal}" alt="${item.grupo}">
+                        <span class="marca-tag">${item.marca}</span>
+                        <h3>${item.grupo}</h3>
+                        <p>Ver presentaciones</p>
+                    </div>
+                `;
+            });
+        }
+
+        function abrirVariantes(index) {
+            const grupo = catalogo.clarificantes[index];
+            const container = document.getElementById('grid-variantes-body');
+            document.getElementById('modal-titulo').innerText = grupo.grupo;
+            container.innerHTML = "";
+
+            // Busca donde dice grupo.variantes.forEach...
+grupo.variantes.forEach(v => {
+    // Cambiamos el <button> por un <span> y quitamos el 'onclick'
+    let etiquetasPeso = v.pesos.map(p => 
+        `<span class="etiqueta-peso">${p}</span>`
+    ).join("");
+
+    container.innerHTML += `
+        <div class="card-variante">
+            <img src="img/${v.imagen}" alt="${v.subtitulo}">
+            <h4>${v.subtitulo}</h4>
+            <div class="lista-pesos">
+                ${etiquetasPeso}
+            </div>
+        </div>
+    `;
+});
+            modal.style.display = "block";
+        }
+
+        function pedir(nombre, sub, peso) {
+            const msg = `Hola Poolcenter, me interesa ${nombre} (${sub}) de ${peso}.`;
+            window.open(`https://wa.me/505XXXXXXXX?text=${encodeURIComponent(msg)}`);
+        }
+
+        function cerrarModal() { modal.style.display = "none"; }
+        window.onclick = (e) => { if(e.target == modal) cerrarModal(); }
+        window.onload = mostrarMarcas;
+    </script>
+</body>
+</html>
