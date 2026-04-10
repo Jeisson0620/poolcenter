@@ -30,56 +30,69 @@
         const gridMarcas = document.getElementById('grid-marcas');
         const modal = document.getElementById('modal-variantes');
 
+        // PASO 1: Mostrar los productos de la categoría "clarificantes"
         function mostrarMarcas() {
-            // FILTRO POR CATEGORÍA CLARIFICANTES
             const lista = catalogo.clarificantes; 
             gridMarcas.innerHTML = "";
+
+            if (lista.length === 0) {
+                gridMarcas.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>Próximamente más productos en esta categoría.</p>";
+                return;
+            }
 
             lista.forEach((item, index) => {
                 gridMarcas.innerHTML += `
                     <div class="card-marca" onclick="abrirVariantes(${index})">
-                        <img src="img/${item.imagenPrincipal}" alt="${item.grupo}">
+                        <div class="contenedor-img-card">
+                            <img src="img/${item.imagenPrincipal}" alt="${item.grupo}">
+                            <div class="capa-descripcion">
+                                <p>${item.descripcion || "Soluciones para un agua cristalina y libre de impurezas."}</p>
+                            </div>
+                        </div>
                         <span class="marca-tag">${item.marca}</span>
                         <h3>${item.grupo}</h3>
-                        <p>Ver presentaciones</p>
+                        <p class="ver-mas">Toca para ver presentaciones</p>
                     </div>
                 `;
             });
         }
 
+        // PASO 2: Abrir variantes al hacer click
         function abrirVariantes(index) {
             const grupo = catalogo.clarificantes[index];
             const container = document.getElementById('grid-variantes-body');
             document.getElementById('modal-titulo').innerText = grupo.grupo;
+            
             container.innerHTML = "";
 
-            // Busca donde dice grupo.variantes.forEach...
-grupo.variantes.forEach(v => {
-    // Cambiamos el <button> por un <span> y quitamos el 'onclick'
-    let etiquetasPeso = v.pesos.map(p => 
-        `<span class="etiqueta-peso">${p}</span>`
-    ).join("");
+            grupo.variantes.forEach(v => {
+                let etiquetasPeso = v.pesos.map(p => 
+                    `<span class="etiqueta-peso">${p}</span>`
+                ).join("");
 
-    container.innerHTML += `
-        <div class="card-variante">
-            <img src="img/${v.imagen}" alt="${v.subtitulo}">
-            <h4>${v.subtitulo}</h4>
-            <div class="lista-pesos">
-                ${etiquetasPeso}
-            </div>
-        </div>
-    `;
-});
+                container.innerHTML += `
+                    <div class="card-variante">
+                        <img src="img/${v.imagen}" alt="${v.subtitulo}">
+                        <h4>${v.subtitulo}</h4>
+                        <div class="lista-pesos">
+                            ${etiquetasPeso}
+                        </div>
+                    </div>
+                `;
+            });
+
             modal.style.display = "block";
         }
 
-        function pedir(nombre, sub, peso) {
-            const msg = `Hola Poolcenter, me interesa ${nombre} (${sub}) de ${peso}.`;
-            window.open(`https://wa.me/505XXXXXXXX?text=${encodeURIComponent(msg)}`);
+        function cerrarModal() { 
+            modal.style.display = "none"; 
         }
 
-        function cerrarModal() { modal.style.display = "none"; }
-        window.onclick = (e) => { if(e.target == modal) cerrarModal(); }
+        window.onclick = (e) => { 
+            if(e.target == modal) cerrarModal(); 
+        }
+
+        // Carga inicial al abrir la página
         window.onload = mostrarMarcas;
     </script>
 </body>

@@ -1,15 +1,42 @@
-/* --- DISEÑO ESPECÍFICO DEL INDEX --- */
+/* =========================================
+   VARIABLES Y ESTILOS GLOBALES
+=========================================
+*/
+:root {
+    --azul-spin: #00549f;        /* Azul corporativo Spin Group */
+    --celeste-claro: #f0f7ff;    /* Fondo de tarjetas secundarias */
+    --verde-whatsapp: #25d366;   /* Verde oficial WA */
+    --gris-oscuro: #333333;      /* Texto principal */
+    --gris-suave: #757575;       /* Texto secundario */
+    --blanco: #ffffff;
+    --borde: #e0e0e0;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    color: var(--gris-oscuro);
+}
+
+/* =========================================
+   DISEÑO PÁGINA DE INICIO (INDEX)
+=========================================
+*/
 .body-inicio {
     background: linear-gradient(180deg, #e0f2fe 0%, #f8fafc 100%);
     min-height: 100vh;
 }
 
-
-/* --- AJUSTES DEL HEADER Y LOGO --- */
-
 .hero {
-    padding: 40px 20px 60px; /* Más espacio abajo para la curva */
+    padding: 40px 20px 60px;
     text-align: center;
     background: var(--azul-spin);
     color: white;
@@ -19,48 +46,31 @@
 }
 
 .contenedor-logo {
-    width: 100px;           /* Tamaño del círculo del logo */
+    width: 100px;
     height: 100px;
-    background: white;      /* Fondo blanco para que el logo resalte */
-    margin: 0 auto 15px;    /* Centrado y espacio abajo */
-    border-radius: 50%;     /* Lo hace circular */
+    background: white;
+    margin: 0 auto 15px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    border: 3px solid var(--verde-whatsapp); /* Aro decorativo verde */
+    border: 3px solid var(--verde-whatsapp);
 }
 
 .img-logo {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;    /* Evita que el logo se deforme */
+    object-fit: contain;
 }
 
 .logo-texto {
-    font-size: 2.2rem;      /* Un poco más pequeño para dar aire al logo */
+    font-size: 2.2rem;
     margin: 0;
     letter-spacing: 3px;
     font-weight: 900;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-/* Ajuste para pantallas muy pequeñas (320px) */
-@media (max-width: 350px) {
-    .contenedor-logo {
-        width: 80px;
-        height: 80px;
-    }
-    .logo-texto {
-        font-size: 1.8rem;
-    }
-}
-.logo-principal {
-    font-size: 2.5rem;
-    margin: 0;
-    letter-spacing: 4px;
-    font-weight: 900;
 }
 
 .subtitulo {
@@ -97,7 +107,7 @@
     box-shadow: var(--sombra);
 }
 
-/* Tarjetas del Menú */
+/* Tarjetas de Categoría en Index */
 .menu-categorias {
     display: flex;
     flex-direction: column;
@@ -114,85 +124,26 @@
     color: inherit;
     box-shadow: var(--sombra);
     transition: transform 0.2s;
-    border: 1px solid transparent;
 }
 
-.card-categoria:active {
-    transform: scale(0.97);
-    border-color: var(--azul-spin);
-}
+.card-categoria:active { transform: scale(0.97); }
 
 .imagen-cat {
-    width: 60px;
-    height: 60px;
+    width: 60px; height: 60px;
     background: var(--celeste-claro);
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     margin-right: 15px;
 }
 
-.imagen-cat img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
+.imagen-cat img { width: 40px; height: 40px; object-fit: contain; }
 
-.info-cat h3 {
-    margin: 0;
-    color: var(--azul-spin);
-    font-size: 1.1rem;
-}
+.btn-entrar { margin-left: auto; font-size: 1.2rem; color: var(--azul-spin); font-weight: bold; }
 
-.info-cat p {
-    margin: 2px 0 0;
-    font-size: 0.8rem;
-    color: var(--gris-suave);
-    line-height: 1.2;
-}
-
-.btn-entrar {
-    margin-left: auto;
-    font-size: 1.2rem;
-    color: var(--azul-spin);
-    font-weight: bold;
-}
-
-.footer-simple {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-    color: var(--gris-suave);
-}
-
-/* --- VARIABLES DE MARCA POOLCENTER --- */
-:root {
-    --azul-spin: #00549f;        /* Azul corporativo Spin Group */
-    --celeste-claro: #f0f7ff;    /* Fondo de tarjetas secundarias */
-    --verde-whatsapp: #25d366;   /* Verde oficial WA */
-    --gris-oscuro: #333333;      /* Texto principal */
-    --gris-suave: #757575;       /* Texto secundario */
-    --blanco: #ffffff;
-    --borde: #e0e0e0;
-    --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* --- ESTILOS GENERALES --- */
-* {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8fafc;
-    color: var(--gris-oscuro);
-}
-
-/* --- NAVEGACIÓN --- */
+/* =========================================
+   NAVEGACIÓN INTERNA
+=========================================
+*/
 .nav-fijo {
     display: flex;
     justify-content: space-between;
@@ -205,37 +156,26 @@ body {
     z-index: 1000;
 }
 
-.btn-volver {
-    text-decoration: none;
-    color: var(--azul-spin);
-    font-weight: 600;
-}
+.btn-volver { text-decoration: none; color: var(--azul-spin); font-weight: 600; }
 
-#titulo-pagina {
-    margin: 0;
-    font-size: 1.1rem;
-    color: var(--azul-spin);
-    text-transform: uppercase;
-}
+#titulo-pagina { margin: 0; font-size: 1.1rem; color: var(--azul-spin); text-transform: uppercase; }
 
-/* --- CONTENEDOR Y GRIDS --- */
-.contenedor {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* =========================================
+   TARJETAS DE PRODUCTOS (GRID PRINCIPAL)
+=========================================
+*/
+.contenedor { padding: 20px; max-width: 1200px; margin: 0 auto; }
 
 .grid-productos {
     display: grid;
     gap: 20px;
 }
 
-/* Responsivo para 320px y 425px */
+/* Adaptación de columnas */
 @media (max-width: 424px) { .grid-productos { grid-template-columns: 1fr; } }
 @media (min-width: 425px) { .grid-productos { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1024px) { .grid-productos { grid-template-columns: 1fr 1fr 1fr 1fr; } }
 
-/* --- TARJETAS DE NIVEL 1 (MARCAS) --- */
 .card-marca {
     background: var(--blanco);
     border-radius: 12px;
@@ -248,23 +188,50 @@ body {
 
 .card-marca:hover { transform: translateY(-5px); }
 
-.card-marca img {
+/* --- CONTENEDOR DE IMAGEN CON HOVER DE DESCRIPCIÓN --- */
+.contenedor-img-card {
+    position: relative;
     width: 100%;
-    max-width: 2000px;
+    max-width: 200px; /* Tamaño grande que pediste */
     height: 200px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.contenedor-img-card img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
-.marca-tag {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--azul-spin);
-    font-weight: bold;
-    margin-bottom: 5px;
+.capa-descripcion {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 84, 159, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-/* --- VENTANA MODAL --- */
+.card-marca:hover .capa-descripcion { opacity: 1; }
+.card-marca:hover .contenedor-img-card img { transform: scale(1.1); }
+
+.marca-tag { display: block; font-size: 0.75rem; color: var(--azul-spin); font-weight: bold; margin-bottom: 5px; }
+
+/* =========================================
+   VENTANA MODAL Y VARIANTES
+=========================================
+*/
 .modal {
     display: none;
     position: fixed;
@@ -287,15 +254,8 @@ body {
     overflow-y: auto;
 }
 
-.close {
-    position: absolute;
-    right: 20px; top: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--gris-suave);
-}
+.close { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; color: var(--gris-suave); }
 
-/* --- TARJETAS DE VARIANTES (DENTRO DEL MODAL) --- */
 .grid-variantes {
     display: grid;
     gap: 15px;
@@ -313,44 +273,39 @@ body {
     align-items: center;
 }
 
-/* AQUÍ ESTÁ EL AJUSTE PARA QUE LA IMAGEN NO SALGA GIGANTE */
 .card-variante img {
     width: 100%;
-    max-width: 150px;      /* Tamaño controlado para el modal */
-    height: 150px;         /* Altura uniforme */
-    object-fit: contain;   /* No se deforma */
+    max-width: 150px;
+    height: 150px;
+    object-fit: contain;
     margin-bottom: 10px;
     background: white;
     padding: 10px;
     border-radius: 8px;
 }
 
-.card-variante h4 {
-    margin: 10px 0;
-    font-size: 0.95rem;
-    color: var(--azul-spin);
-}
+/* =========================================
+   ETIQUETAS INFORMATIVAS (PESOS)
+=========================================
+*/
+.lista-pesos { display: grid; gap: 5px; width: 100%; }
 
-/* --- BOTONES DE PESO / WHATSAPP --- */
-.lista-pesos {
-    display: grid;
-    gap: 5px;
-    width: 100%;
-}
-
-.btn-peso {
+.etiqueta-peso {
     background: var(--blanco);
     border: 1px solid var(--azul-spin);
     color: var(--azul-spin);
     padding: 8px;
     border-radius: 5px;
-    cursor: pointer;
     font-weight: 600;
-    transition: 0.2s;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
-.btn-peso:hover {
-    background: var(--verde-whatsapp);
-    color: white;
-    border-color: var(--verde-whatsapp);
+.footer-simple { text-align: center; padding: 20px; font-size: 0.8rem; color: var(--gris-suave); }
+
+/* Ajustes finales para pantallas muy pequeñas */
+@media (max-width: 350px) {
+    .contenedor-logo { width: 80px; height: 80px; }
+    .logo-texto { font-size: 1.8rem; }
+    .contenedor-img-card { height: 150px; }
 }

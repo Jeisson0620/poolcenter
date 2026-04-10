@@ -28,64 +28,74 @@
 
     <script src="productos.js"></script>
     <script>
-        const gridMarcas = document.getElementById('grid-marcas');
-        const modal = document.getElementById('modal-variantes');
+    const gridMarcas = document.getElementById('grid-marcas');
+    const modal = document.getElementById('modal-variantes');
 
-        // Paso 1: Mostrar las marcas principales (Clorizide, Trizide...)
-       function mostrarMarcas() {
-    const lista = catalogo.desinfectantes;
-    gridMarcas.innerHTML = "";
+    // Paso 1: Mostrar las marcas principales (Clorizide, Trizide...)
+    function mostrarMarcas() {
+        const lista = catalogo.desinfectantes; 
+        gridMarcas.innerHTML = "";
 
-    lista.forEach((item, index) => {
-        // USO DE BACKTICKS ( ` ) PARA QUE FUNCIONE LA VARIABLE ${ }
-        gridMarcas.innerHTML += `
-            <div class="card-marca" onclick="abrirVariantes(${index})">
-                <img src="img/${item.imagenPrincipal}" alt="${item.grupo}">
-                <span class="marca-tag">${item.marca}</span>
-                <h3>${item.grupo}</h3>
-                <p>Ver presentaciones</p>
-            </div>
-        `;
-    });
-}
-        // Paso 2: Al hacer click, abrir el modal con las variantes (Grano, Tableta...)
-        function abrirVariantes(index) {
-            const grupo = catalogo.desinfectantes[index];
-            const container = document.getElementById('grid-variantes-body');
-            document.getElementById('modal-titulo').innerText = grupo.grupo;
-            
-            container.innerHTML = "";
+        lista.forEach((item, index) => {
+            gridMarcas.innerHTML += `
+                <div class="card-marca" onclick="abrirVariantes(${index})">
+                    <div class="contenedor-img-card">
+                        <img src="img/${item.imagenPrincipal}" alt="${item.grupo}">
+                        <div class="capa-descripcion">
+                            <p>${item.descripcion || "Producto de alta calidad para tu piscina."}</p>
+                        </div>
+                    </div>
+                    <span class="marca-tag">${item.marca}</span>
+                    <h3>${item.grupo}</h3>
+                    <p class="ver-mas">Toca para ver presentaciones</p>
+                </div>
+            `;
+        });
+    } // <-- Aquí se cierra correctamente mostrarMarcas
 
-            // Busca donde dice grupo.variantes.forEach...
-grupo.variantes.forEach(v => {
-    // Cambiamos el <button> por un <span> y quitamos el 'onclick'
-    let etiquetasPeso = v.pesos.map(p => 
-        `<span class="etiqueta-peso">${p}</span>`
-    ).join("");
+    // Paso 2: Al hacer click, abrir el modal con las variantes
+    function abrirVariantes(index) {
+        const grupo = catalogo.desinfectantes[index];
+        const container = document.getElementById('grid-variantes-body');
+        document.getElementById('modal-titulo').innerText = grupo.grupo;
+        
+        container.innerHTML = "";
 
-    container.innerHTML += `
-        <div class="card-variante">
-            <img src="img/${v.imagen}" alt="${v.subtitulo}">
-            <h4>${v.subtitulo}</h4>
-            <div class="lista-pesos">
-                ${etiquetasPeso}
-            </div>
-        </div>
-    `;
-});
+        grupo.variantes.forEach(v => {
+            let etiquetasPeso = v.pesos.map(p => 
+                `<span class="etiqueta-peso">${p}</span>`
+            ).join("");
 
-            modal.style.display = "block";
-        }
+            container.innerHTML += `
+                <div class="card-variante">
+                    <img src="img/${v.imagen}" alt="${v.subtitulo}">
+                    <h4>${v.subtitulo}</h4>
+                    <div class="lista-pesos">
+                        ${etiquetasPeso}
+                    </div>
+                </div>
+            `;
+        });
 
-        function pedir(nombre, sub, peso) {
-            const msg = `Hola Poolcenter, me interesa ${nombre} (${sub}) de ${peso}.`;
-            window.open(`https://wa.me/505XXXXXXXX?text=${encodeURIComponent(msg)}`);
-        }
+        modal.style.display = "block";
+    }
 
-        function cerrarModal() { modal.style.display = "none"; }
-        window.onclick = (e) => { if(e.target == modal) cerrarModal(); }
+    // Función para el botón de WhatsApp (opcional si decides usarlo luego)
+    function pedir(nombre, sub, peso) {
+        const msg = `Hola Poolcenter, me interesa ${nombre} (${sub}) de ${peso}.`;
+        window.open(`https://wa.me/50585141042?text=${encodeURIComponent(msg)}`);
+    }
 
-        window.onload = mostrarMarcas;
-    </script>
+    function cerrarModal() { 
+        modal.style.display = "none"; 
+    }
+
+    window.onclick = (e) => { 
+        if(e.target == modal) cerrarModal(); 
+    }
+
+    // Ejecutar al cargar la página
+    window.onload = mostrarMarcas;
+</script>
 </body>
 </html>

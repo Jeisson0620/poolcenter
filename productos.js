@@ -3,6 +3,7 @@ const catalogo = {
         {
             grupo: "Clorizide",
             marca: "Spin",
+            descripcion: "Cloro estabilizado al 91%. Ideal para mantener el agua cristalina y libre de bacterias por más tiempo.",
             imagenPrincipal: "CLORIZIDE-91.png",
             variantes: [
                 { 
@@ -20,38 +21,40 @@ const catalogo = {
         {
             grupo: "Trizide",
             marca: "Spin",
+            descripcion: "Triple acción: desinfectante, algicida y clarificante en un solo producto para un mantenimiento simplificado.",
             imagenPrincipal: "TRIZIDE.png",
             variantes: [
                 { 
                     subtitulo: "Trizide 65% Grano", 
-                    imagen: "img/descarga.webp",
+                    imagen: "TRIZIDE.png",
                     pesos: ["1.35 Kg", "4.2 Kg", "12 Kg", "20 Kg"] 
                 },
                 { 
                     subtitulo: "Trizide 65% Tableta", 
-                    imagen: "img/descarga.webp",
+                    imagen: "TRIZIDE.png",
                     pesos: ["1.8 Kg", "4 Kg", "11 Kg"] 
                 }
             ]
         },
-         {
-            grupo: "SHOCK CORRRECTIVO",
+        {
+            grupo: "SHOCK CORRECTIVO",
             marca: "Spin",
+            descripcion: "Tratamiento de choque para eliminar rápidamente contaminantes, algas y devolver la transparencia al agua.",
             imagenPrincipal: "SHOCK-CORRECTIVO.png",
             variantes: [
                 { 
                     subtitulo: "Granular", 
-                    imagen: "CLORIZIDE-91.png",
+                    imagen: "SHOCK-CORRECTIVO.png",
                     pesos: ["1.2 Kg", "4 Kg", "10 Kg", "18 Kg"] 
-                },
-               
+                }
             ]
-        },
+        }
     ],
     balanceadores: [
         {
             grupo: "ALCALOS",
             marca: "Spin",
+            descripcion: "Incrementador de alcalinidad total. Evita variaciones bruscas del pH y protege los equipos.",
             imagenPrincipal: "ALCALOS.png",
             variantes: [
                 { 
@@ -64,6 +67,7 @@ const catalogo = {
         {
             grupo: "Alkalin",
             marca: "Spin",
+            descripcion: "Subidor de pH rápido. Mejora el confort del bañista y optimiza la efectividad del cloro.",
             imagenPrincipal: "ALKALIN.png",
             variantes: [
                 { 
@@ -76,6 +80,7 @@ const catalogo = {
         {
             grupo: "Acidet",
             marca: "Spin",
+            descripcion: "Bajador de pH y alcalinidad. Previene incrustaciones de sarro y turbidez en el agua.",
             imagenPrincipal: "ACIDET.png",
             variantes: [
                 { 
@@ -88,6 +93,7 @@ const catalogo = {
         {
             grupo: "Cristalin Platinum",
             marca: "Spin",
+            descripcion: "Clarificante líquido de alta potencia. Agrupa partículas pequeñas para que el filtro las retenga fácilmente.",
             imagenPrincipal: "CRISTALIN-PLATINUM.png",
             variantes: [
                 { 
@@ -97,9 +103,10 @@ const catalogo = {
                 }
             ]
         },
-         {
+        {
             grupo: "Cristalin Green",
             marca: "Spin",
+            descripcion: "Especializado en eliminar la turbidez verde causada por algas suspendidas en el agua.",
             imagenPrincipal: "CRISTALIN-GREEN.png",
             variantes: [
                 { 
@@ -109,9 +116,10 @@ const catalogo = {
                 }
             ]
         },
-         {
+        {
             grupo: "Clarit Plus",
             marca: "Spin",
+            descripcion: "Coagulante y floculante. Ideal para limpiezas profundas y recuperación de aguas muy turbias.",
             imagenPrincipal: "CLARIT-PLUS.png",
             variantes: [
                 { 
@@ -120,11 +128,7 @@ const catalogo = {
                     pesos: ["1 L", "5 L", "10 L"] 
                 }
             ]
-        },
-        
+        }
     ],
-
-    clarificantes: [
-        // Aquí agregarías Alcalos, pH Plus, etc.
-    ]
+    clarificantes: []
 };
