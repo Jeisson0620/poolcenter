@@ -154,7 +154,7 @@ const catalogo = {
            grupo: "Algicín",
     marca: "Spin",
     descripcion: "Poderoso algicida preventivo y correctivo. Ideal para eliminar el aspecto verdoso y las paredes resbaladizas, manteniendo el agua cristalina.",
-    imagenPrincipal: "ALGICIN.png",
+    imagenPrincipal: "algicin.png",
     variantes: [
         { 
             subtitulo: "Algicín Líquido", 
