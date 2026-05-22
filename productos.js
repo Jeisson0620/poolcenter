@@ -48,6 +48,24 @@ const catalogo = {
                     pesos: ["1.2 Kg", "4 Kg", "10 Kg", "18 Kg"] 
                 }
             ]
+        },
+         {
+            grupo: "TRICLORO",
+            marca: "poolcare",
+            descripcion: "Cloro estabilizado de alta concentración (91%). Ideal para mantener la desinfección diaria de la piscina de forma eficiente y económica.",
+            imagenPrincipal: "tricloro.png",
+            variantes: [
+                { 
+                    subtitulo: "Tricloro en grano", 
+                    imagen: "tricloro rojo.png",
+                    pesos: ["1 Kg", "5 Kg", "10 Kg", "25 Kg", "50 KG"] 
+                },
+                { 
+                    subtitulo: "Tricloro en tableta", 
+                    imagen: "tricloro azul.png",
+                    pesos: ["tambito 5 tab", "5 Kg", "10 Kg", "25 Kg", "50 KG"] 
+                }
+            ]
         }
     ],
     balanceadores: [
