@@ -90,7 +90,10 @@ const catalogo = {
                 }
             ]
         },
-        {
+       
+    ],
+    clarificantes: [
+         {
             grupo: "Cristalin Platinum",
             marca: "Spin",
             descripcion: "Clarificante líquido de alta potencia. Agrupa partículas pequeñas para que el filtro las retenga fácilmente.",
@@ -128,7 +131,62 @@ const catalogo = {
                     pesos: ["1 L", "5 L", "10 L"] 
                 }
             ]
+        },
+        {
+           grupo: "Algicín",
+    marca: "Spin",
+    descripcion: "Poderoso algicida preventivo y correctivo. Ideal para eliminar el aspecto verdoso y las paredes resbaladizas, manteniendo el agua cristalina.",
+    imagenPrincipal: "ALGICIN.png",
+    variantes: [
+        { 
+            subtitulo: "Algicín Líquido", 
+            imagen: "algicin.png",
+            pesos: ["1 L", "5 L", "10 L", "20 L"] 
+        }
+    ]
         }
     ],
-    clarificantes: []
+    /* --- COPIA ESTO DENTRO DE CATALOGO EN PRODUCTOS.JS --- */
+equipos: [
+    {
+        grupo: "Bomba Pentair SuperFlo",
+        marca: "Pentair",
+        descripcion: "Bomba de alto rendimiento, silenciosa y de fácil mantenimiento. Ideal para piscinas residenciales estándar.",
+        imagenPrincipal: "bomba-superflo.png",
+        variantes: [
+            { 
+                subtitulo: "Modelos Monofásicos", 
+                imagen: "bomba-superflo.png",
+                pesos: ["0.5 HP", "0.75 HP", "1.0 HP", "1.5 HP", "2.0 HP", "2.5 HP"] 
+            }
+        ]
+    },
+    {
+        grupo: "Bomba Pentair WhisperFlo",
+        marca: "Pentair",
+        descripcion: "La bomba más silenciosa del mercado. Diseñada para ofrecer la máxima circulación de agua con el mínimo ruido.",
+        imagenPrincipal: "bomba-whisperflo.png",
+        variantes: [
+            { 
+                subtitulo: "Alto Rendimiento", 
+                imagen: "bomba-whisperflo.png",
+                pesos: ["0.5 HP", "0.75 HP", "1.0 HP", "2.0 HP", "3.0 HP"] 
+            }
+        ]
+    },
+    {
+        grupo: "Filtros de Arena (Serie SD)",
+        marca: "Pentair",
+        descripcion: "Sistemas de filtración de arena de alta eficiencia. Mantienen el agua libre de impurezas físicas con un mantenimiento sencillo.",
+        imagenPrincipal: "filtro-arena.png",
+        variantes: [
+            { 
+                subtitulo: "Tanque Termoplástico", 
+                imagen: "filtro-arena.png",
+                pesos: ["SD 35", "SD 40", "SD 60", "SD 70", "SD 80"] 
+            }
+        ]
+    }
+],
+/* --- FIN DEL BLOQUE PARA EQUIPOS --- */
 };
