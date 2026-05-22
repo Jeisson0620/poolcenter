@@ -57,12 +57,12 @@ const catalogo = {
             variantes: [
                 { 
                     subtitulo: "Tricloro en grano", 
-                    imagen: "tricloro rojo.png",
+                    imagen: "tricloro azul.png",
                     pesos: ["1 Kg", "5 Kg", "10 Kg", "25 Kg", "50 KG"] 
                 },
                 { 
                     subtitulo: "Tricloro en tableta", 
-                    imagen: "tricloro azul.png",
+                    imagen: "tricloro rojo.png",
                     pesos: ["tambito 5 tab", "5 Kg", "10 Kg", "25 Kg", "50 KG"] 
                 }
             ]
