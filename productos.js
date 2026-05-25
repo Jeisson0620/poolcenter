@@ -159,7 +159,7 @@ const catalogo = {
         { 
             subtitulo: "Algicín Líquido", 
             imagen: "algicin.png",
-            pesos: ["1 L", "5 L", "10 L", "20 L"] 
+            pesos: ["5 KG", "8 KG"] 
         }
     ]
         }
@@ -169,39 +169,65 @@ equipos: [
     {
         grupo: "Bomba Pentair SuperFlo",
         marca: "Pentair",
-        descripcion: "Bomba de alto rendimiento, silenciosa y de fácil mantenimiento. Ideal para piscinas residenciales estándar.",
-        imagenPrincipal: "bomba-superflo.png",
+        descripcion: "Bomba de alto rendimiento, silenciosa y de fácil mantenimiento. Ideal para la circulación eficiente en piscinas residenciales estándar.",
+        imagenPrincipal: "SuperFlo.png",
         variantes: [
             { 
-                subtitulo: "Modelos Monofásicos", 
-                imagen: "bomba-superflo.png",
-                pesos: ["0.5 HP", "0.75 HP", "1.0 HP", "1.5 HP", "2.0 HP", "2.5 HP"] 
+                subtitulo: "Super Flo", 
+                imagen: "SuperFlo.png",
+                pesos: ["0.75 HP", "1.0 HP", "1.5 HP", "2.0 HP"] 
             }
         ]
     },
     {
-        grupo: "Bomba Pentair WhisperFlo",
-        marca: "Pentair",
-        descripcion: "La bomba más silenciosa del mercado. Diseñada para ofrecer la máxima circulación de agua con el mínimo ruido.",
-        imagenPrincipal: "bomba-whisperflo.png",
+        grupo: "Bomba Hayward",
+        marca: "Hayward",
+        descripcion: "El estándar de la industria en eficiencia y durabilidad. Cuenta con un motor de alto rendimiento y una canasta extragrande para hojas.",
+        imagenPrincipal: "HaywardSuperPump.jpg",
         variantes: [
             { 
-                subtitulo: "Alto Rendimiento", 
-                imagen: "bomba-whisperflo.png",
-                pesos: ["0.5 HP", "0.75 HP", "1.0 HP", "2.0 HP", "3.0 HP"] 
+                subtitulo: "Super Pump", 
+                imagen: "HaywardSuperPump.jpg",
+                pesos: [ "0.75 HP", "1.0 HP", "1.5 HP", "2.0 HP"] 
             }
         ]
     },
     {
-        grupo: "Filtros de Arena (Serie SD)",
+        grupo: "Filtros de Arena SandDollar",
         marca: "Pentair",
-        descripcion: "Sistemas de filtración de arena de alta eficiencia. Mantienen el agua libre de impurezas físicas con un mantenimiento sencillo.",
-        imagenPrincipal: "filtro-arena.png",
+        descripcion: "Filtros termoplásticos moldeados en una sola pieza. Ofrecen una excelente filtración física con una válvula de montaje superior muy fácil de operar.",
+        imagenPrincipal: "filtropentair.png",
         variantes: [
             { 
-                subtitulo: "Tanque Termoplástico", 
-                imagen: "filtro-arena.png",
-                pesos: ["SD 35", "SD 40", "SD 60", "SD 70", "SD 80"] 
+                subtitulo: "Serie SD (Top Mount)", 
+                imagen: "filtropentair.png",
+                pesos: ["SD 40", "SD 60", "SD 70", "SD 80"] 
+            }
+        ]
+    },
+    {
+        grupo: "Filtros de Cartucho StarClear",
+        marca: "Hayward",
+        descripcion: "Sistemas de filtración por cartucho de alta claridad. No requieren retrolavado, lo que ahorra miles de litros de agua y químicos.",
+        imagenPrincipal: "filtrohayward.png",
+        variantes: [
+            { 
+                subtitulo: "Elementos de Poliéster", 
+                imagen: "filtrohayward.png",
+                pesos: ["C500", "C900", "C1200"] 
+            }
+        ]
+    },
+    {
+        grupo: "Filtro ProSeries S310T (30\")",
+        marca: "Hayward",
+        descripcion: "Filtro de arena de gran capacidad construido en material polimérico anticorrosivo. Incluye válvula selectora superior VariFlo de 2 pulgadas.",
+        imagenPrincipal: "filtrohaywards310t.png",
+        variantes: [
+            { 
+                subtitulo: "Montaje Superior (Top)", 
+                imagen: "filtrohaywards310t.png",
+                pesos: ["ProSeries 30\" - Válvula 2\""] 
             }
         ]
     }
